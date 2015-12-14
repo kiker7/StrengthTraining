@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">Trening Siłowy</string>
+    <string name="action_settings">Ustawnienia</string>
     <string name="begin_training">Rozpocznij Trening</string>
     <string name="altas">Atlas ćwiczeń</string>
     <string name="progress">Zobcz swoje postępy</string>
@@ -90,7 +91,7 @@
     <string name="exeName.3.1">Wyciskanie sztangi zza karku</string>
     <string name="exeName.3.1.1">W pozycji siedzącej, sztanga za karkiem trzymana nachwytem:
         - wziąć wdech i wycisnąć sztangę pionowo, nie wyginając nadmiernie grzbietu;
-        - wykonać wykonać wydech w końcowej fazie ruchu.
+        - wykonać wydech w końcowej fazie ruchu.
         Ćwiczenie to angażuje mięsień naramienny, głównie jego część środkową i tylną, jak również mięsnień czworoboczny, mięsień trójgłowy ramienia i mięsień zębaty przedni.
         W wyciskaniu uczestniczą również, ale w mniejszym stopniu, mięśnie równoległoboczne, mięsień podgrzebieniowy, mięśień obły mniejszy, a w warstwie
         głębokiej mięsień nadgrzbietowy.
@@ -212,7 +213,7 @@
     </string>
     <string name="exeName.5.6">Wniosy barków ze sztangą (SZRUGSY)</string>
     <string name="exeName.5.6.6">W pozycji stojącej, przodem do położonej na podłoży lub podstawce sztangi, kończyny dolne w lekkim rozkroku:
-        - chwycić sztangę rękami w nawróceniu lub uchwytem odwróconym, jeśli obciążenia są duże (uchwyt nie czerszy niż rozstaw barków)'
+        - chwycić sztangę rękami w nawróceniu lub uchwytem odwróconym, jeśli obciążenia są duże (uchwyt nie czerszy niż rozstaw barków)
         - mocno wyprostować grzbiet, napiąć mięśnie brzucha i wykonać wznos ramion.
         Ćwiczenie to roziwja partię zstępującą mięśnia czworobocznego, głównie jego część potyliczno-obojczykową, jak różnież okolice kąta łopatki.</string>
     <string name="exeName.6">Nogi</string>
@@ -297,4 +298,8 @@
         - wykonać wydech w końcowej fazie ćwiczenia
         Ćwiczenie to oddziałuje na mięśnie biodrowo-lędźwiowe, mięsień prosty uda i misień napinacz powięzi szerokiej (podczas unoszenia kończyn dolnych)
         W celu zlokalizowania pracy w tłoczni brzusznej zaleca się wykonywanie niewielkich poziomych ruchów udami. Kolana nie mogą jednak nigdy opadać poniżej poziomu.</string>
+    <string name="title_activity_atlas_list">AtlasListActivity</string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="title_activity_test">TestActivity</string>
+    <string name="title_activity_atlas">AtlasActivity</string>
 </resources>
