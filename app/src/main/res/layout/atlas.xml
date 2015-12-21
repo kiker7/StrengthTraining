@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#60628c">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/altas"
+        android:id="@+id/textView2"
+        android:layout_gravity="center_horizontal"
+        android:textColor="#ffffff"
+        android:textSize="50dp"
+        android:layout_marginTop="20dp"
+        android:textIsSelectable="false" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/biceps"
+        android:id="@+id/button4"
+        android:layout_gravity="center_horizontal"
+        android:width="200dp"
+        android:layout_marginTop="30dp"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/triceps"
+        android:id="@+id/button5"
+        android:layout_gravity="center_horizontal"
+        android:width="200dp"
+        android:layout_marginTop="5dp"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/barki"
+        android:id="@+id/button6"
+        android:layout_gravity="center_horizontal"
+        android:width="200dp"
+        android:layout_marginTop="5dp"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/klatka"
+        android:id="@+id/button7"
+        android:layout_gravity="center_horizontal"
+        android:width="200dp"
+        android:layout_marginTop="5dp"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/plecy"
+        android:id="@+id/button8"
+        android:layout_gravity="center_horizontal"
+        android:width="200dp"
+        android:layout_marginTop="5dp"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/nogi"
+        android:id="@+id/button9"
+        android:layout_gravity="center_horizontal"
+        android:width="200dp"
+        android:layout_marginTop="5dp"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/brzuch"
+        android:id="@+id/button10"
+        android:layout_gravity="center_horizontal"
+        android:width="200dp"
+        android:layout_marginTop="5dp"/>
+</LinearLayout>
