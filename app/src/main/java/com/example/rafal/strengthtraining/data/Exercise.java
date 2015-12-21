@@ -34,6 +34,46 @@ public class Exercise implements Serializable {
         this.exeNumber = exeNumber;
     }
 
+    public int getExerciseId() {
+        return exerciseId;
+    }
+
+    public void setExerciseId(int exerciseId) {
+        this.exerciseId = exerciseId;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getMusclePart() {
+        return musclePart;
+    }
+
+    public void setMusclePart(int musclePart) {
+        this.musclePart = musclePart;
+    }
+
+    public int getExeNumber() {
+        return exeNumber;
+    }
+
+    public void setExeNumber(int exeNumber) {
+        this.exeNumber = exeNumber;
+    }
+
     @Override
     public String toString() {
         return "Exercise{" +
