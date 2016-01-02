@@ -26,6 +26,22 @@ public class Macrocycle implements Serializable {
         this.macroType = macroType;
     }
 
+    public String getMacrocycle() {
+        return macrocycle;
+    }
+
+    public int getMacroType() {
+        return macroType;
+    }
+
+    public void setMacroType(int macroType) {
+        this.macroType = macroType;
+    }
+
+    public void setMacrocycle(String macrocycle) {
+        this.macrocycle = macrocycle;
+    }
+
     @Override
     public String toString() {
         return "Macrocycle{" +

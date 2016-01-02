@@ -28,6 +28,22 @@ public class User implements Serializable {
         this.macroType = macroType;
     }
 
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public int getMacroType() {
+        return macroType;
+    }
+
+    public void setMacroType(int macroType) {
+        this.macroType = macroType;
+    }
+
     @Override
     public String toString() {
         return "User{" +

@@ -50,12 +50,25 @@
         android:layout_marginTop="42dp"
         android:width="200dp" />
 
-    <TextView
+    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="@string/profile"
+        android:id="@+id/profilChange"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:id="@+id/textViewDB"/>
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:singleLine="false" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="czysc"
+        android:id="@+id/button4"
+        android:layout_alignParentBottom="true"
+        android:layout_toLeftOf="@+id/profilChange"
+        android:layout_toStartOf="@+id/profilChange" />
 
 
 </RelativeLayout>

@@ -31,9 +31,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
-            android:text="Name"
             android:ems="10"
-            android:id="@+id/editText"
+            android:id="@+id/profil_form_name_field"
             android:layout_marginLeft="70dp" />
     </LinearLayout>
 
@@ -51,17 +50,36 @@
             android:text="@string/typTreningu"
             android:id="@+id/textView5" />
 
-        <RadioButton
+        <RadioGroup
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/intensywny"
-            android:id="@+id/radioButton" />
+            android:orientation="horizontal"
+            android:id="@+id/radioGroupProfil">
 
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/objetosc"
-            android:id="@+id/radioButton2" />
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/objetosc"
+                android:id="@+id/volume"
+                android:checked="false" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/intensywny"
+                android:id="@+id/intensive" />
+
+        </RadioGroup>
+
     </LinearLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Gotowe"
+        android:id="@+id/send_button"
+        android:layout_gravity="center_horizontal" />
+
+
 
 </LinearLayout>

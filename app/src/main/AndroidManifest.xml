@@ -13,11 +13,21 @@
             android:theme="@style/AppTheme.NoActionBar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity android:name=".Atlas" >
+        </activity>
+        <activity android:name=".ShowExerciseDetail" >
+        </activity>
+        <activity android:name=".ProfilFormActivity"
+            android:parentActivityName=".MainActivity">
+        </activity>
+        <activity android:name=".ViewTraining">
+        </activity>
+        <activity android:name=".ShowProfiles">
+        </activity>
+        <activity android:name=".ShowWeek">
         </activity>
     </application>
 

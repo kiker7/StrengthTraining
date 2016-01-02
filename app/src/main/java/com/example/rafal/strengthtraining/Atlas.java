@@ -1,7 +1,9 @@
 package com.example.rafal.strengthtraining;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ExpandableListView;
 
@@ -25,7 +27,7 @@ public class Atlas extends Activity {
     private HashMap<String,List<String>> listDataChild;
     private DatabaseHelper databaseHelper = null;
     private List<Exercise> exerciseList;
-
+    private Exercise exercise;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -33,24 +35,43 @@ public class Atlas extends Activity {
         setContentView(R.layout.atlas_main);
 
         ExpandableListView expandableListView = (ExpandableListView) findViewById(R.id.expandableListView);
-
         getData();
-
         ExpandableListAdapter listAdapter = new ExpandableListAdapter(this, listDataHeader, listDataChild);
-
         expandableListView.setAdapter(listAdapter);
 
         expandableListView.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
             @Override
             public boolean onChildClick(ExpandableListView parent, View v, int groupPosition, int childPosition, long id) {
-                // DODAC INTENT I PRZESLAC OBIEKT DANEGO CWICZENIA
-                // I WYSWIETLIC SZCZEGOLY CWICZENIA
+
+                Exercise e = getExercise(groupPosition,childPosition);
+                Intent intent = new Intent(Atlas.this, ShowExerciseDetail.class);
+                intent.putExtra("Exercise", e);
+                startActivity(intent);
                 return false;
             }
         });
     }
 
-    /* funkcja do pobrania danych z bazy i przygotowania kontenerow na naglowki i subitemy */
+    public Exercise getExercise(int groupPosition, int childPosition){
+
+        Exercise exercise = new Exercise();
+        if(!exerciseList.isEmpty()){
+        for (Exercise e: exerciseList
+             ) {
+            if((e.getMusclePart() - 1) == groupPosition  && (e.getExeNumber() - 1) == childPosition){
+                exercise = e;
+                break;
+            }else
+                exercise = null;
+        }
+        return exercise;
+        }else {
+            Log.d("LISTA","PUSTA LISTA");
+            return null;
+        }
+    }
+
+
 
     private void getData(){
         try{
@@ -77,13 +98,13 @@ public class Atlas extends Activity {
             nameList.add(e.getName());
         }
 
-        listDataChild.put(listDataHeader.get(0), nameList.subList(0, 5));
-        listDataChild.put(listDataHeader.get(1), nameList.subList(5, 11));
-        listDataChild.put(listDataHeader.get(2), nameList.subList(11, 17));
-        listDataChild.put(listDataHeader.get(3), nameList.subList(17, 23));
-        listDataChild.put(listDataHeader.get(4), nameList.subList(23, 29));
-        listDataChild.put(listDataHeader.get(5), nameList.subList(29, 35));
-        listDataChild.put(listDataHeader.get(6), nameList.subList(35, 41));
+        listDataChild.put(listDataHeader.get(0), nameList.subList(0, 6));
+        listDataChild.put(listDataHeader.get(1), nameList.subList(6, 12));
+        listDataChild.put(listDataHeader.get(2), nameList.subList(12, 18));
+        listDataChild.put(listDataHeader.get(3), nameList.subList(18, 24));
+        listDataChild.put(listDataHeader.get(4), nameList.subList(24, 30));
+        listDataChild.put(listDataHeader.get(5), nameList.subList(30, 36));
+        listDataChild.put(listDataHeader.get(6), nameList.subList(36, exerciseList.size()));
     }
 
     private DatabaseHelper getHelper() {
