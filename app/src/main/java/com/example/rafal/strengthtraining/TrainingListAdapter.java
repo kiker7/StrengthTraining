@@ -85,6 +85,7 @@ public class TrainingListAdapter extends BaseExpandableListAdapter {
     public View getChildView(int groupPosition, int childPosition, boolean isLastChild, View convertView, ViewGroup parent) {
 
         final String childText = (String) getChild(groupPosition, childPosition);
+        int size = childList.get(headerList.get(groupPosition)).size();
 
         if(convertView == null){
             LayoutInflater inflater = (LayoutInflater) this.context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -95,25 +96,41 @@ public class TrainingListAdapter extends BaseExpandableListAdapter {
         txtListChild.setText(childText);
         ImageView img = (ImageView) convertView.findViewById(R.id.training_img);
 
-        switch (childPosition){
-            case 0:
-                img.setImageResource(R.drawable.biceps_48);
-            case 4:
-                img.setImageResource(R.drawable.triceps_48);
-            case 8:
-                img.setImageResource(R.drawable.barki_48);
-            case 12:
-                img.setImageResource(R.drawable.klatka_48);
-            case 16:
-                img.setImageResource(R.drawable.plecy_48);
-            case 20:
-                img.setImageResource(R.drawable.nogi_48);
-            case 24:
-                img.setImageResource(R.drawable.brzuch_48);
+        if(size == 63){
+            switch (childPosition){
+                case 0:
+                    img.setImageResource(R.drawable.biceps_48);
+                case 4:
+                    img.setImageResource(R.drawable.triceps_48);
+                case 8:
+                    img.setImageResource(R.drawable.barki_48);
+                case 12:
+                    img.setImageResource(R.drawable.klatka_48);
+                case 16:
+                    img.setImageResource(R.drawable.plecy_48);
+                case 20:
+                    img.setImageResource(R.drawable.nogi_48);
+                case 24:
+                    img.setImageResource(R.drawable.brzuch_48);
+            }
+        }else if(size == 84){
+            switch (childPosition){
+                case 0:
+                    img.setImageResource(R.drawable.biceps_48);
+                case 6:
+                    img.setImageResource(R.drawable.triceps_48);
+                case 11:
+                    img.setImageResource(R.drawable.barki_48);
+                case 16:
+                    img.setImageResource(R.drawable.klatka_48);
+                case 21:
+                    img.setImageResource(R.drawable.plecy_48);
+                case 26:
+                    img.setImageResource(R.drawable.nogi_48);
+                case 31:
+                    img.setImageResource(R.drawable.brzuch_48);
+            }
         }
-
-        // zrobic jeszcze dla objetosciowego treningu gdzie od 4 tyg po 4 cwiczenia sa
-
         return convertView;
     }
 

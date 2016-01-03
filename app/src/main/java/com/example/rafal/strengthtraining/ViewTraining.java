@@ -74,7 +74,7 @@ public class ViewTraining extends ListActivity {
     private User getByUserName(String userName){
         try {
             QueryBuilder<User, Integer> qb = userDao.queryBuilder();
-            qb.where().eq("userName", userName);
+            qb.where().eq("user_name", userName);
             PreparedQuery<User> pq = qb.prepare();
             return userDao.queryForFirst(pq);
         } catch (SQLException e) {
@@ -108,10 +108,37 @@ public class ViewTraining extends ListActivity {
 
     @Override
     protected void onListItemClick(ListView l, View v, int position, long id) {
-        // przeslac dokladna czesc makrocyklu na podstawie position
+        List<String> exercisesList = convertStringToArrayList(macro);
+        List<String> subExeList = new ArrayList<String>();
+        Intent intent = new Intent(ViewTraining.this, ShowWeek.class);
+        if(!exercisesList.isEmpty()){
+            if(exercisesList.size() == 504){
+                for(int i = 0; i < 8; i++){
+                    if(i == position){
+                        subExeList =  exercisesList.subList(position * 63, position * 63 + 63);
+                        break;
+                    }
+                }
+            }else if(exercisesList.size() == 588){
+                for(int i = 0; i < 8; i++){
+                    if(i == position && i < 4){
+                        subExeList = exercisesList.subList(position * 63, position * 63 + 63);
+                        break;
+                    }else if(i == position && i == 4){
+                        subExeList =  exercisesList.subList(position * 63, position * 63 + 84);
+                        break;
+                    }else if(i == position && i > 4){
+                        subExeList = exercisesList.subList((position - 1) * 84, position * 84);
+                        break;
+                    }
+                }
+            }
+        }
 
-
+        intent.putStringArrayListExtra("list",  new ArrayList<>(subExeList));
+        startActivity(intent);
     }
+
 
     private ArrayList<String> convertStringToArrayList(String str){
         String strSeparator = ",";
