@@ -134,8 +134,9 @@ public class ViewTraining extends ListActivity {
                 }
             }
         }
-
-        intent.putStringArrayListExtra("list",  new ArrayList<>(subExeList));
+        ArrayList<String> passList = new ArrayList<>(subExeList);
+        passList.add(String.valueOf(position));
+        intent.putStringArrayListExtra("list", passList);
         startActivity(intent);
     }
 

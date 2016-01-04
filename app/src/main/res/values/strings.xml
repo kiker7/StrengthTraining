@@ -19,4 +19,9 @@
     <string name="profile">Profile</string>
     <string name="header">Trening</string>
     <string name="help">Poradnik</string>
+    <string name="start">Rozpocznij trening !</string>
+    <string name="footer">Odznacz skończony tydzień: </string>
+    <string name="progresHeader">Postępy</string>
+    <string name="status">Status ukończenia makrocyklu:</string>
+    <string name="done">Skonczone!</string>
 </resources>

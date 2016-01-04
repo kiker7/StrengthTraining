@@ -29,6 +29,8 @@
         </activity>
         <activity android:name=".ShowWeek">
         </activity>
+        <activity android:name=".ViewProgress">
+        </activity>
     </application>
 
 </manifest>

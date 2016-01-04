@@ -17,7 +17,7 @@ import com.j256.ormlite.android.apptools.OpenHelperManager;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button atlasBtn, profileBtn, clear, profilChange;
+    Button atlasBtn, profileBtn, clear, profilChange,progress;
     DatabaseHelper databaseHelper = null;
 
 
@@ -30,6 +30,15 @@ public class MainActivity extends AppCompatActivity {
         profileBtn = (Button) findViewById(R.id.button);
         clear = (Button) findViewById(R.id.button4);
         profilChange = (Button) findViewById(R.id.profilChange);
+        progress = (Button) findViewById(R.id.button3);
+
+        progress.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, ViewProgress.class);
+                startActivity(intent);
+            }
+        });
 
         profilChange.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -43,7 +52,19 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 SharedPreferences preferences = getApplicationContext().getSharedPreferences("Session", MODE_PRIVATE);
+                SharedPreferences preferences2 = getApplicationContext().getSharedPreferences("Progress", MODE_PRIVATE);
                 SharedPreferences.Editor editor = preferences.edit();
+                SharedPreferences.Editor editor2 = preferences2.edit();
+//                editor2.remove("0");
+//                editor2.remove("1");
+//                editor2.remove("2");
+//                editor2.remove("3");
+//                editor2.remove("4");
+//                editor2.remove("5");
+//                editor2.remove("6");
+//                editor2.remove("7");
+                editor2.clear();
+                editor2.apply();
                 editor.remove("logIn");
                 editor.remove("userName");
                 editor.apply();

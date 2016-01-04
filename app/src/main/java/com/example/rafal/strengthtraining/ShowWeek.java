@@ -1,8 +1,11 @@
 package com.example.rafal.strengthtraining;
 
 import android.app.Activity;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ExpandableListView;
 import android.widget.Toast;
 
@@ -28,12 +31,17 @@ public class ShowWeek extends Activity {
     private List<Exercise> exerciseList;
     private ArrayList<String> nameList;
     private ArrayList<String> list;
+    // nr tygodnia
+    private String week;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.week_details);
+        Button footerBtn = (Button) findViewById(R.id.footerbutton);
+
         list = getIntent().getExtras().getStringArrayList("list");
+        week = list.remove(list.size() -1);
         try{
             final Dao<Exercise,Integer> exercisesDao = getHelper().getExerciseDao();
             exerciseList = exercisesDao.queryForAll();
@@ -46,6 +54,17 @@ public class ShowWeek extends Activity {
         ExpandableListView expandableListView = (ExpandableListView) findViewById(R.id.expandableListViewWeek);
         TrainingListAdapter trainingListAdapter = new TrainingListAdapter(this, listDataHeader, listDataChild);
         expandableListView.setAdapter(trainingListAdapter);
+
+        footerBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SharedPreferences preferences = getApplicationContext().getSharedPreferences("Progress", MODE_PRIVATE);
+                SharedPreferences.Editor editor = preferences.edit();
+                editor.putBoolean(week, true);
+                editor.apply();
+            }
+        });
+
     }
 
     private void getData(){
