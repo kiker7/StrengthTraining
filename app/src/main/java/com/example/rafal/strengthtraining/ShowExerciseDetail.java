@@ -30,6 +30,8 @@ public class ShowExerciseDetail extends Activity {
         Exercise exercise = (Exercise) getIntent().getSerializableExtra("Exercise");
         name.setText(exercise.getName());
         description.setText(exercise.getDescription());
-
+        image.setImageResource(exercise.getImageResourceIdForExercise(this));
+//        image.setImageResource(R.drawable.brzuch_48);
     }
+
 }

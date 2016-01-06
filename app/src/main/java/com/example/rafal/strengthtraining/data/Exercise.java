@@ -1,5 +1,10 @@
 package com.example.rafal.strengthtraining.data;
 
+import android.content.Context;
+import android.content.res.TypedArray;
+import android.graphics.drawable.Drawable;
+
+import com.example.rafal.strengthtraining.R;
 import com.j256.ormlite.field.DatabaseField;
 
 import java.io.Serializable;
@@ -72,6 +77,26 @@ public class Exercise implements Serializable {
 
     public void setExeNumber(int exeNumber) {
         this.exeNumber = exeNumber;
+    }
+
+    // zwraca ilustracje dla cwiczenia
+    public int getImageResourceIdForExercise(Context context){
+
+        TypedArray imagesArray = context.getResources().obtainTypedArray(R.array.images_array);
+        int id = 0;
+
+        if(musclePart == 1) {
+            return imagesArray.getResourceId((exeNumber -1),0);
+        }else {
+            for (int i = 1; i < imagesArray.length(); i++) {
+                if(i == (((musclePart - 1) * 6) + exeNumber) - 1){
+                    id = imagesArray.getResourceId(i,0);
+                    break;
+                }
+            }
+        }
+        imagesArray.recycle();
+        return id;
     }
 
     @Override

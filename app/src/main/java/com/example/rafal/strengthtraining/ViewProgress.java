@@ -66,7 +66,7 @@ public class ViewProgress extends Activity {
             public void onValueSelected(Entry e, int dataSetIndex, Highlight h) {
                 if(e == null)
                     return;
-                Toast.makeText(getApplicationContext(),xData[e.getXIndex()] + " = " + e.getVal() +"%" ,Toast.LENGTH_SHORT ).show();
+//                Toast.makeText(getApplicationContext(),xData[e.getXIndex()] + " = " + e.getVal() +"%" ,Toast.LENGTH_SHORT ).show();
             }
 
             @Override
@@ -127,8 +127,6 @@ public class ViewProgress extends Activity {
                 truecount++;
             }
         }
-        return new float[]{truecount,(8 - truecount)};
+        return new float[]{truecount ,(8 - truecount)};
     }
-
-
 }

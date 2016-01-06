@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.BaseExpandableListAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.HashMap;
 import java.util.List;
@@ -94,43 +95,48 @@ public class TrainingListAdapter extends BaseExpandableListAdapter {
 
         TextView txtListChild = (TextView) convertView.findViewById(R.id.training_list_subitem);
         txtListChild.setText(childText);
-        ImageView img = (ImageView) convertView.findViewById(R.id.training_img);
+        ImageView img = (ImageView) convertView.findViewById(R.id.muscle_part_img);
+//        img.setImageResource(R.drawable.brzuch_48);
 
-        if(size == 63){
-            switch (childPosition){
-                case 0:
+
+        if(size == 21){
+            if(childPosition != 0) {
+                if (childPosition / 3 + 1 == 1)
                     img.setImageResource(R.drawable.biceps_48);
-                case 4:
+                if (childPosition / 3 + 1 == 2)
                     img.setImageResource(R.drawable.triceps_48);
-                case 8:
+                if (childPosition / 3 + 1 == 3)
                     img.setImageResource(R.drawable.barki_48);
-                case 12:
+                if (childPosition / 3 + 1 == 4)
                     img.setImageResource(R.drawable.klatka_48);
-                case 16:
+                if (childPosition / 3 + 1 == 5)
                     img.setImageResource(R.drawable.plecy_48);
-                case 20:
+                if (childPosition / 3 + 1 == 6)
                     img.setImageResource(R.drawable.nogi_48);
-                case 24:
+                if (childPosition / 3 + 1 == 7)
                     img.setImageResource(R.drawable.brzuch_48);
-            }
-        }else if(size == 84){
-            switch (childPosition){
-                case 0:
+            }else
+                img.setImageResource(R.drawable.biceps_48);
+        }else if(size == 28){
+            if(childPosition != 0) {
+                if (childPosition / 4 + 1 == 1)
                     img.setImageResource(R.drawable.biceps_48);
-                case 6:
+                if (childPosition / 4 + 1 == 2)
                     img.setImageResource(R.drawable.triceps_48);
-                case 11:
+                if (childPosition / 4 + 1 == 3)
                     img.setImageResource(R.drawable.barki_48);
-                case 16:
+                if (childPosition / 4 + 1 == 4)
                     img.setImageResource(R.drawable.klatka_48);
-                case 21:
+                if (childPosition / 4 + 1 == 5)
                     img.setImageResource(R.drawable.plecy_48);
-                case 26:
+                if (childPosition / 4 + 1 == 6)
                     img.setImageResource(R.drawable.nogi_48);
-                case 31:
+                if (childPosition / 4 + 1 == 7)
                     img.setImageResource(R.drawable.brzuch_48);
-            }
+            }else
+                img.setImageResource(R.drawable.biceps_48);
         }
+
         return convertView;
     }
 

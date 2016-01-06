@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <array name="images_array">
+        <item>@drawable/biceps_1</item>
+        <item>@drawable/bicepc_2</item>
+        <item>@drawable/bicepc_3</item>
+        <item>@drawable/bicepc_4</item>
+        <item>@drawable/bicepc_5</item>
+        <item>@drawable/bicepc_6</item>
+        <item>@drawable/triceps_1</item>
+        <item>@drawable/triceps_2</item>
+        <item>@drawable/triceps_3</item>
+        <item>@drawable/triceps_4</item>
+        <item>@drawable/triceps_5</item>
+        <item>@drawable/triceps_6</item>
+        <item>@drawable/barki_1</item>
+        <item>@drawable/barki_2</item>
+        <item>@drawable/barki_3</item>
+        <item>@drawable/barki_4</item>
+        <item>@drawable/barki_5</item>
+        <item>@drawable/barki_6</item>
+        <item>@drawable/klatka_1</item>
+        <item>@drawable/klatka_2</item>
+        <item>@drawable/klatka_3</item>
+        <item>@drawable/klatka_4</item>
+        <item>@drawable/klatka_5</item>
+        <item>@drawable/klatka_6</item>
+        <item>@drawable/plecy_1</item>
+        <item>@drawable/plecy_2</item>
+        <item>@drawable/plecy_3</item>
+        <item>@drawable/plecy_4</item>
+        <item>@drawable/plecy_5</item>
+        <item>@drawable/plecy_6</item>
+        <item>@drawable/nogi_1</item>
+        <item>@drawable/nogi_2</item>
+        <item>@drawable/nogi_3</item>
+        <item>@drawable/nogi_4</item>
+        <item>@drawable/nogi_5</item>
+        <item>@drawable/nogi_6</item>
+        <item>@drawable/brzuch_1</item>
+        <item>@drawable/brzuch_2</item>
+        <item>@drawable/brzuch_3</item>
+        <item>@drawable/brzuch_4</item>
+        <item>@drawable/brzuch_5</item>
+        <item>@drawable/brzuch_6</item>
+    </array>
+
+    <array name="muscle_part_array">
+        <item>@drawable/biceps_48</item>
+        <item>@drawable/triceps_48</item>
+        <item>@drawable/barki_48</item>
+        <item>@drawable/klatka_48</item>
+        <item>@drawable/plecy_48</item>
+        <item>@drawable/nogi_48</item>
+        <item>@drawable/brzuch_48</item>
+    </array>
+
+</resources>
