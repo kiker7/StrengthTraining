@@ -16,7 +16,7 @@
     <string name="typTreningu">Typ treningu:</string>
     <string name="intensywny">Intensywny</string>
     <string name="objetosc">Objętościowy</string>
-    <string name="profile">Profile</string>
+    <string name="profile">Profil</string>
     <string name="header">Trening</string>
     <string name="help">Poradnik</string>
     <string name="start">Rozpocznij trening !</string>
@@ -24,4 +24,15 @@
     <string name="progresHeader">Postępy</string>
     <string name="status">Status ukończenia makrocyklu:</string>
     <string name="done">Skonczone!</string>
+    <string name="users">Profil</string>
+    <string name="loggedAs">Zalogowany jako:</string>
+    <string name="delete">Usuń</string>
+    <string name="log">Zaloguj</string>
+    <string name="photo">Zdjęcie</string>
+    <string name="user">Użytkownik:</string>
+    <string name="change_photo">Dodaj zdjęcie</string>
+    <string name="macrocycle">Makrocykl:</string>
+    <string name="progress_view">Zobacz swoje postępy</string>
+    <string name="options">Opcje:</string>
+    <string name="macroChange">Zmień makrocykl</string>
 </resources>

@@ -29,7 +29,6 @@ public class ShowWeek extends Activity {
     private HashMap<String,List<String>> listDataChild;
     private DatabaseHelper databaseHelper = null;
     private List<Exercise> exerciseList;
-    private ArrayList<String> nameList;
     private ArrayList<String> list;
     // nr tygodnia
     private String week;
@@ -58,10 +57,13 @@ public class ShowWeek extends Activity {
         footerBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                SharedPreferences preferences = getApplicationContext().getSharedPreferences("Progress", MODE_PRIVATE);
+                SharedPreferences user = getApplicationContext().getSharedPreferences("Session", MODE_PRIVATE);
+                String name = user.getString("userName",null);
+                SharedPreferences preferences = getApplicationContext().getSharedPreferences(name, MODE_PRIVATE);
                 SharedPreferences.Editor editor = preferences.edit();
                 editor.putBoolean(week, true);
                 editor.apply();
+                Toast.makeText(getApplicationContext(),"Zapisano",Toast.LENGTH_LONG).show();
             }
         });
 
@@ -116,61 +118,6 @@ public class ShowWeek extends Activity {
             return null;
         }
     }
-
-//    private List<String> setPartNameInList(List<String> list){
-//        if(list.size() == 21){
-//            for(int i = 0 ; i < 28; i++){
-//                switch (i){
-//                    case 0:
-//                        list.add(i,"Biceps");
-//                        continue;
-//                    case 4:
-//                        list.add(i,"Triceps");
-//                        continue;
-//                    case 8:
-//                        list.add(i,"Barki");
-//                        continue;
-//                    case 12:
-//                        list.add(i,"Klatka");
-//                        continue;
-//                    case 16:
-//                        list.add(i,"Plecy");
-//                        continue;
-//                    case 20:
-//                        list.add(i,"Nogi");
-//                        continue;
-//                    case 24:
-//                        list.add(i,"Brzuch");
-//                }
-//            }
-//        }else if(list.size() == 28){
-//            for(int i = 0 ; i < 35; i++){
-//                switch (i){
-//                    case 0:
-//                        list.add(i,"Biceps");
-//                        continue;
-//                    case 5:
-//                        list.add(i,"Triceps");
-//                        continue;
-//                    case 10:
-//                        list.add(i,"Barki");
-//                        continue;
-//                    case 15:
-//                        list.add(i,"Klatka");
-//                        continue;
-//                    case 20:
-//                        list.add(i,"Plecy");
-//                        continue;
-//                    case 25:
-//                        list.add(i,"Nogi");
-//                        continue;
-//                    case 30:
-//                        list.add(i,"Brzuch");
-//                }
-//            }
-//        }
-//        return list;
-//    }
 
     private DatabaseHelper getHelper() {
         if (databaseHelper == null) {

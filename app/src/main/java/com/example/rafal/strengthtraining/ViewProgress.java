@@ -118,7 +118,9 @@ public class ViewProgress extends Activity {
     }
 
     private float[] setChartYVal() {
-        SharedPreferences preferences = getApplicationContext().getSharedPreferences("Progress", MODE_PRIVATE);
+        SharedPreferences userPrefs = getApplicationContext().getSharedPreferences("Session", MODE_PRIVATE);
+        String name = userPrefs.getString("userName",null);
+        SharedPreferences preferences = getApplicationContext().getSharedPreferences(name, MODE_PRIVATE);
         Map<String, ?> allPreffs = preferences.getAll();
         Set<String> set = allPreffs.keySet();
         int truecount = 0;

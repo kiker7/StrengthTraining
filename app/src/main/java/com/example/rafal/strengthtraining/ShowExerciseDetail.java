@@ -31,7 +31,6 @@ public class ShowExerciseDetail extends Activity {
         name.setText(exercise.getName());
         description.setText(exercise.getDescription());
         image.setImageResource(exercise.getImageResourceIdForExercise(this));
-//        image.setImageResource(R.drawable.brzuch_48);
     }
 
 }

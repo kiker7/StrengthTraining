@@ -3,4 +3,111 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:id="@+id/users_textView"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/users"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView"
+            android:src="@drawable/user_icon_128"
+            android:contentDescription="@string/photo"
+            android:clickable="false"
+            android:baselineAlignBottom="false"
+            android:layout_alignTop="@+id/userProfileName"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="@string/user"
+            android:id="@+id/userProfileName"
+            android:layout_alignParentTop="true"
+            android:layout_alignLeft="@+id/macroTypeProfile"
+            android:layout_alignStart="@+id/macroTypeProfile"
+            android:layout_marginTop="38dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/currentUserName"
+            android:text="name"
+            android:layout_below="@+id/userProfileName"
+            android:layout_centerHorizontal="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="@string/macrocycle"
+            android:id="@+id/macroTypeProfile"
+            android:layout_below="@+id/currentUserName"
+            android:layout_toRightOf="@+id/imageView"
+            android:layout_toEndOf="@+id/imageView" />
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/progress_view"
+            android:id="@+id/show_progress"
+            android:layout_below="@+id/optionsLabel"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/macroTypeView"
+            android:text="type"
+            android:layout_below="@+id/macroTypeProfile"
+            android:layout_alignRight="@+id/currentUserName"
+            android:layout_alignEnd="@+id/currentUserName" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="@string/options"
+            android:id="@+id/optionsLabel"
+            android:layout_marginTop="41dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/imageView" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/macroChange"
+            android:id="@+id/macroChange"
+            android:layout_below="@+id/show_progress"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignRight="@+id/show_progress"
+            android:layout_alignEnd="@+id/show_progress" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/delete"
+            android:id="@+id/deleteBtn"
+            android:layout_below="@+id/macroChange"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignRight="@+id/macroChange"
+            android:layout_alignEnd="@+id/macroChange" />
+
+    </RelativeLayout>
+
 </LinearLayout>
