@@ -20,6 +20,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 /**
  * Created by Kiker on 19.12.15.
@@ -42,6 +44,10 @@ public class ViewTraining extends ListActivity {
 
         int macroType;
         String[] array = getWeekList();
+        int [] arr = setDoneWeekArray();
+//        ArrayAdapter<String> adapter = new ViewTraininListAdapter(this, R.layout.view_training_item, array, arr);
+//        setListAdapter(adapter);
+
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, array);
         setListAdapter(adapter);
 
@@ -95,6 +101,23 @@ public class ViewTraining extends ListActivity {
             array[i] = String.valueOf(i+1) + week;
         }
         return array;
+    }
+
+    private int[] setDoneWeekArray(){
+        SharedPreferences userPrefs = getApplicationContext().getSharedPreferences("Session", MODE_PRIVATE);
+        String name = userPrefs.getString("userName",null);
+        SharedPreferences preferences = getApplicationContext().getSharedPreferences(name, MODE_PRIVATE);
+        Map<String, ?> allPreffs = preferences.getAll();
+        Set<String> set = allPreffs.keySet();
+        int [] arr = new int[8];
+        int i =0;
+        for(String e: set){
+            if(allPreffs.get(e).equals(true)) {
+                arr[i] = i;
+            }
+            i++;
+        }
+        return arr;
     }
 
     private DatabaseHelper getHelper() {

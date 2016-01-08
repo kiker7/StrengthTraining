@@ -17,7 +17,7 @@ import com.j256.ormlite.android.apptools.OpenHelperManager;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button atlasBtn, profileBtn, clear,progress;
+    Button atlasBtn, profileBtn,progress;
     DatabaseHelper databaseHelper = null;
 
 
@@ -28,7 +28,6 @@ public class MainActivity extends AppCompatActivity {
 
         atlasBtn = (Button) findViewById(R.id.button2);
         profileBtn = (Button) findViewById(R.id.button);
-        clear = (Button) findViewById(R.id.button4);
         progress = (Button) findViewById(R.id.button3);
 
         progress.setOnClickListener(new View.OnClickListener() {
@@ -39,22 +38,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
-        clear.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                SharedPreferences preferences = getApplicationContext().getSharedPreferences("Session", MODE_PRIVATE);
-                SharedPreferences preferences2 = getApplicationContext().getSharedPreferences("Progress", MODE_PRIVATE);
-                SharedPreferences.Editor editor = preferences.edit();
-                SharedPreferences.Editor editor2 = preferences2.edit();
-                editor2.clear();
-                editor2.apply();
-                editor.remove("logIn");
-                editor.remove("userName");
-                editor.apply();
-                Toast.makeText(getApplicationContext(),"Wyczyszczono", Toast.LENGTH_SHORT).show();
-            }
-        });
 
         profileBtn.setOnClickListener(new View.OnClickListener() {
             @Override

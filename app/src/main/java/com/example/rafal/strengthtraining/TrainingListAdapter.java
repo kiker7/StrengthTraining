@@ -96,7 +96,6 @@ public class TrainingListAdapter extends BaseExpandableListAdapter {
         TextView txtListChild = (TextView) convertView.findViewById(R.id.training_list_subitem);
         txtListChild.setText(childText);
         ImageView img = (ImageView) convertView.findViewById(R.id.muscle_part_img);
-//        img.setImageResource(R.drawable.brzuch_48);
 
 
         if(size == 21){

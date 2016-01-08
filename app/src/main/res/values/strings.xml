@@ -35,4 +35,11 @@
     <string name="progress_view">Zobacz swoje postępy</string>
     <string name="options">Opcje:</string>
     <string name="macroChange">Zmień makrocykl</string>
+    <string name="guidebook">Poradnik</string>
+    <string name="intro">1. Wstęp</string>
+    <string name="howTo">2. Jak ćwiczyć</string>
+    <string name="advises">3. Porady</string>
+    <string name="guide_description"> Opis makrocykli</string>
+    <string name="guide_howTo">Jak ćwiczyć</string>
+    <string name="guide_advise">Porady jakieś zywieniowe</string>
 </resources>

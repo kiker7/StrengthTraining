@@ -73,6 +73,7 @@ public class ProfilFormActivity extends Activity {
                             editor.apply();
                             Intent intent = new Intent(ProfilFormActivity.this, ViewTraining.class);
                             startActivity(intent);
+                            finish();
                         } catch (SQLException e) {
                             e.printStackTrace();
                         }
