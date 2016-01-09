@@ -118,7 +118,7 @@ public class ShowProfiles extends Activity {
                     try {
                         userDao.delete(user);
                         userDao.create(newUser);
-                        SharedPreferences preferences2 = getApplicationContext().getSharedPreferences("Progress", MODE_PRIVATE);
+                        SharedPreferences preferences2 = getApplicationContext().getSharedPreferences(currentUserName, MODE_PRIVATE);
                         SharedPreferences.Editor editor2 = preferences2.edit();
                         editor2.clear();
                         editor2.apply();

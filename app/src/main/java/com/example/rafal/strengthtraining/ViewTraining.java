@@ -4,9 +4,14 @@ import android.app.ListActivity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.rafal.strengthtraining.data.DatabaseHelper;
 import com.example.rafal.strengthtraining.data.Macrocycle;
@@ -16,6 +21,7 @@ import com.j256.ormlite.dao.Dao;
 import com.j256.ormlite.stmt.PreparedQuery;
 import com.j256.ormlite.stmt.QueryBuilder;
 
+import java.lang.reflect.Array;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -34,22 +40,18 @@ public class ViewTraining extends ListActivity {
     private Dao<User, Integer> userDao;
     private User user;
     private String macro;
+    private String[] array = getWeekList();
+    private int [] positionArray;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.training);
+        setContentView(R.layout.main);
+        positionArray = setDoneWeekArray();
+        setListAdapter(new IconicAdapter());
 
         String userName = getUserNameFromPref();
-
         int macroType;
-        String[] array = getWeekList();
-        int [] arr = setDoneWeekArray();
-//        ArrayAdapter<String> adapter = new ViewTraininListAdapter(this, R.layout.view_training_item, array, arr);
-//        setListAdapter(adapter);
-
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, array);
-        setListAdapter(adapter);
 
         try{
             final Dao<Macrocycle,Integer> macrocycleDao = getHelper().getMacrocyclesDao();
@@ -109,11 +111,11 @@ public class ViewTraining extends ListActivity {
         SharedPreferences preferences = getApplicationContext().getSharedPreferences(name, MODE_PRIVATE);
         Map<String, ?> allPreffs = preferences.getAll();
         Set<String> set = allPreffs.keySet();
-        int [] arr = new int[8];
+        int [] arr = new int[]{9,9,9,9,9,9,9,9};
         int i =0;
         for(String e: set){
             if(allPreffs.get(e).equals(true)) {
-                arr[i] = i;
+                arr[i] = Integer.valueOf(e);
             }
             i++;
         }
@@ -176,6 +178,38 @@ public class ViewTraining extends ListActivity {
         if (databaseHelper != null) {
             OpenHelperManager.releaseHelper();
             databaseHelper = null;
+        }
+    }
+
+    class IconicAdapter extends ArrayAdapter {
+        IconicAdapter() {
+            super(ViewTraining.this, R.layout.row, array);
+        }
+
+        public View getView(int position, View convertView,
+                            ViewGroup parent) {
+            View row=convertView;
+
+            if (row==null) {
+                LayoutInflater inflater=getLayoutInflater();
+
+                row=inflater.inflate(R.layout.row, parent, false);
+            }
+
+            TextView label=(TextView)row.findViewById(R.id.label);
+
+            label.setText(array[position]);
+
+            ImageView icon=(ImageView)row.findViewById(R.id.icon);
+
+            for(int i =0 ; i < positionArray.length; i++){
+                if (positionArray[i] == position) {
+                    icon.setImageResource(R.drawable.ok_32);
+                    break;
+                }
+            }
+
+            return(row);
         }
     }
 }
