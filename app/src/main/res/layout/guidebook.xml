@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#3c3c3c">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -20,28 +21,39 @@
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:text="@string/guidebook"
                 android:id="@+id/guideHeader"
-                android:layout_gravity="center_horizontal" />
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="15dp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="@string/intro"
-                android:id="@+id/TCdescription" />
+                android:id="@+id/TCdescription"
+                android:layout_marginTop="3dp"
+                android:layout_marginLeft="3dp"
+                android:textStyle="bold" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="@string/howTo"
-                android:id="@+id/TChowTo" />
+                android:id="@+id/TChowTo"
+                android:layout_marginTop="4dp"
+                android:layout_marginLeft="3dp"
+                android:textStyle="bold" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="@string/advises"
-                android:id="@+id/TCadvise" />
+                android:id="@+id/TCadvise"
+                android:layout_marginTop="4dp"
+                android:layout_marginLeft="3dp"
+                android:textStyle="bold" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -49,7 +61,8 @@
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="@string/guide_description"
                 android:id="@+id/guide_description"
-                android:layout_marginTop="25dp" />
+                android:layout_marginTop="25dp"
+                android:layout_marginLeft="3dp" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -57,7 +70,8 @@
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="@string/guide_howTo"
                 android:id="@+id/guide_howTo"
-                android:layout_marginTop="10dp" />
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="3dp" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -65,7 +79,9 @@
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="@string/guide_advise"
                 android:id="@+id/guide_advise"
-                android:layout_marginTop="10dp" />
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="3dp" />
+
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

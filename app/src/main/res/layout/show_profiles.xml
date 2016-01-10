@@ -18,7 +18,21 @@
         android:layout_height="match_parent">
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"></RelativeLayout>
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/macroTypeView"
+            android:text="Objetosciowy"
+            android:textColor="@android:color/white"
+            android:layout_marginTop="148dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="10dp"
+            android:textSize="18sp" />
+    </RelativeLayout>
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -29,7 +43,8 @@
             android:baselineAlignBottom="false"
             android:layout_alignTop="@+id/userProfileName"
             android:layout_toRightOf="@+id/show_progress"
-            android:layout_toEndOf="@+id/show_progress" />
+            android:layout_toEndOf="@+id/show_progress"
+            android:layout_marginLeft="40dp" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -41,7 +56,10 @@
             android:textColor="@android:color/white"
             android:layout_alignParentTop="true"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="10dp"
+            android:textStyle="bold"
+            android:textSize="25sp" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -51,7 +69,9 @@
             android:textColor="@android:color/white"
             android:layout_below="@+id/userProfileName"
             android:layout_alignRight="@+id/optionsLabel"
-            android:layout_alignEnd="@+id/optionsLabel" />
+            android:layout_alignEnd="@+id/optionsLabel"
+            android:layout_marginTop="7dp"
+            android:textSize="18sp" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -62,7 +82,11 @@
             android:textColor="@android:color/white"
             android:layout_below="@+id/currentUserName"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="10dp"
+            android:textStyle="bold"
+            android:textSize="25sp"
+            android:layout_marginTop="10dp" />
 
         <Button
             style="?android:attr/buttonStyleSmall"
@@ -72,17 +96,10 @@
             android:id="@+id/show_progress"
             android:layout_below="@+id/optionsLabel"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/macroTypeView"
-            android:text="type"
-            android:layout_below="@+id/macroTypeProfile"
-            android:layout_alignRight="@+id/currentUserName"
-            android:layout_alignEnd="@+id/currentUserName"
-            android:textColor="@android:color/white"/>
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:background="#74b0ef" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -94,7 +111,8 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_below="@+id/imageView"
-            android:textColor="@android:color/white"/>
+            android:textColor="@android:color/white"
+            android:layout_marginLeft="10dp" />
 
         <Button
             android:layout_width="wrap_content"
@@ -105,18 +123,24 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_alignRight="@+id/show_progress"
-            android:layout_alignEnd="@+id/show_progress" />
+            android:layout_alignEnd="@+id/show_progress"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="7dp"
+            android:layout_marginBottom="7dp"
+            android:background="#74b0ef" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/delete"
             android:id="@+id/deleteBtn"
-            android:layout_below="@+id/macroChange"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_alignRight="@+id/macroChange"
-            android:layout_alignEnd="@+id/macroChange" />
+            android:layout_alignEnd="@+id/macroChange"
+            android:layout_marginLeft="10dp"
+            android:layout_below="@+id/macroChange"
+            android:background="#74b0ef" />
 
     </RelativeLayout>
 

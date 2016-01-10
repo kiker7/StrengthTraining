@@ -39,8 +39,27 @@
     <string name="intro">1. Wstęp</string>
     <string name="howTo">2. Jak ćwiczyć</string>
     <string name="advises">3. Porady</string>
-    <string name="guide_description"> Opis makrocykli</string>
-    <string name="guide_howTo">Jak ćwiczyć</string>
-    <string name="guide_advise">Porady jakieś zywieniowe</string>
+    <string name="guide_description"> 1. Aplikacja "Trening Siłowy" umożliwia skonstruowanie treningu typu FBW (Full Body Workout). Jest to nic innego jak trening, na którym trenujemy cale ciało w ciągu jednej sesji treningowej. Dodatkowo mamy opcję stworznia dla nas dwóch rodzajów makrocyklów treningowych: objętościowy oraz intensywny. Makrocykl objętościowy polega na zwiększaniu objętości ćwiczeń (tzn. liczby powtórzeń i serii), a nie wagi podnoszonych ciężarów. Jest to alternatywa dla typowego treningu siłowego, w którym przyrost masy mięśniowej i siły osiąga się poprzez dokładanie coraz większych obciążeń przy małej liczbie powtórzeń.
+        Makrocykl intensywny polega na wzroście intensywności treningu. Stosuje się krótsze przerwy pomiędzy ćwiczeniami oraz stopniowo zwiększany jest ciężar. Czas trwania jednego makrocyklu wynosi przeciętnie od 8 do 10 tygodni w zależności od indywidualnych potrzeb. Po każdym makrocyklu należy zrobić przerwę ok 2 tygodni przed rozpoczęciem następnego makrocyklu w celu regeneracji organizmu.
+     </string>
+    <string name="guide_howTo" > 2. Aby osiągnąć jak najlepsze efekty należy stosować kilka prostych zasad które w dużym stopniu przyczynią się do osiągnięcia sukcesu. Zacznijmy jednak od wyjaśnienia podstawowych pojęć. \n <b>CM</b> - ciężar maksymalny: jest to maksymalny ciężar jaki jesteśmy w stanie podsnieć na początku makrocyklu.\n
+    <b>Fazy ćwiczenia:</b> każde ćwiczenie składa się z 4 faz (pozytywna, zatrzymanie, negatywna, wyprost) kolejno odzwierciedlających ruch wykonywany podczas podnoszenia ciężaru oraz powrotu do początkowej pozycji. Każda z tych faz powinna zajmować odpowiednią ilość czasu w zależności od rodzaju wykonywanego treningu.\n
+        <b>Jednostka treningowa:</b> dwutygodniowa część makrocyklu obejmująca sześć treningów z których ostatni jest treningiem lekkim. \n
+        <b>Lekki trening:</b> trening wykonywany po każdej jednostce treningowej w celu regeneracji organizmu. Różni się od zwykłego treningu tym że obciążenie powinno wynosić 40\%% CM.\n
+        <b>Intensywny:</b> 3 ćwiczenia na każdą grupę mięśniową przez cały czas trwania makricyklu. Fazy ćwiczenia powinny wynosić odpowiednio 2s-1s-4s-0s (Pozytywna - zatrzymanie - negatywna - wyprost) Jednostki treningowe:\n
+        1) 70\%% CM, seria 12 powtórzeń\n
+        2) 75\%% CM, seria 10 powtórzeń\n
+        3) 80\%% CM, seria 8 powtórzeń\n
+        4) 85\%% CM, seria 6 powtórzeń.\n
+        Przerwy pomiędzy seriami ok 30-60 sekund. Czas trwania całego treningu: 60-80 min.\n
+        <b>Objętościowy:</b> trening przy stałym ciężarze 75\%% CM. Fazy ćwiczenia: 1s-0s-2s-0s. Jednostki treningowe:\n
+        1) 3 ćwiczenia po 12 powtórzeń\n
+        2) 3 ćwiczenia po 15 powtórzeń\n
+        3) 4 ćwiczenia po 12 powtórzeń\n
+        4) 4 ćwiczenia po 15 powtórzeń.\n
+        Przerwy pomiędzy seriami ok 60-120 sekund. Czas trwania całego treningu: 80-120 min.
+    </string>
+    <string name="guide_advise"> 3. Ważnym elementem odpowiedniego treningu jest właściwy dobór diety. Aby efekty były szybciej widoczne należy się tym kierować. O poradach żywieniowych możesz poczytać <a href="http://www.kulturystyka.org.pl/modules/news/article.php?storyid=1013">tutaj</a> </string>
+    <string name="link"><a href="http://www.kulturystyka.org.pl/modules/news/article.php?storyid=1013"> tutaj</a></string>
     <string name="exe_description">Opis:</string>
 </resources>
