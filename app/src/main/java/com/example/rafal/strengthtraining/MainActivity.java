@@ -2,6 +2,7 @@ package com.example.rafal.strengthtraining;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -17,18 +18,22 @@ import com.j256.ormlite.android.apptools.OpenHelperManager;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button atlasBtn, profileBtn,progress;
-    DatabaseHelper databaseHelper = null;
-
+    private Button atlasBtn, profileBtn,progress;
+    private DatabaseHelper databaseHelper = null;
+    private TextView header;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        header = (TextView) findViewById(R.id.textView);
         atlasBtn = (Button) findViewById(R.id.button2);
         profileBtn = (Button) findViewById(R.id.button);
         progress = (Button) findViewById(R.id.button3);
+
+        Typeface customFont = Typeface.createFromAsset(getAssets(),"fonts/MotionPicture.ttf");
+        header.setTypeface(customFont);
+        header.setTextSize(70);
 
         progress.setOnClickListener(new View.OnClickListener() {
             @Override

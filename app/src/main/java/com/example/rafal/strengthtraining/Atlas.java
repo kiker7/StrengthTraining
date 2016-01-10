@@ -2,10 +2,13 @@ package com.example.rafal.strengthtraining;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ExpandableListView;
+import android.widget.TextView;
 
 import com.example.rafal.strengthtraining.data.DatabaseHelper;
 import com.example.rafal.strengthtraining.data.Exercise;
@@ -28,11 +31,17 @@ public class Atlas extends Activity {
     private DatabaseHelper databaseHelper = null;
     private List<Exercise> exerciseList;
     private Exercise exercise;
+    private TextView header;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.atlas_main);
+        header = (TextView) findViewById(R.id.atlasHeader);
+        Typeface customFont = Typeface.createFromAsset(getAssets(),"fonts/gunplay.ttf");
+        header.setTypeface(customFont);
+        header.setTextSize(40);
+        header.setTextColor(Color.WHITE);
 
         ExpandableListView expandableListView = (ExpandableListView) findViewById(R.id.expandableListView);
         getData();

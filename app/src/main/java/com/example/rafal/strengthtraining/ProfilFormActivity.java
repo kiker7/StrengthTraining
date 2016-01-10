@@ -3,6 +3,7 @@ package com.example.rafal.strengthtraining;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -10,6 +11,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.rafal.strengthtraining.data.DatabaseHelper;
@@ -25,11 +27,12 @@ import java.sql.SQLException;
  */
 public class ProfilFormActivity extends Activity {
 
-    Button sendButton;
-    EditText userName;
-    RadioGroup radioGroup;
-    RadioButton intensive, volume;
-    DatabaseHelper databaseHelper = null;
+    private Button sendButton;
+    private EditText userName;
+    private RadioGroup radioGroup;
+    private RadioButton intensive, volume;
+    private DatabaseHelper databaseHelper = null;
+    private TextView header, name, type;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +44,15 @@ public class ProfilFormActivity extends Activity {
         radioGroup = (RadioGroup) findViewById(R.id.radioGroupProfil);
         intensive = (RadioButton) findViewById(R.id.intensive);
         volume = (RadioButton) findViewById(R.id.volume);
+        header = (TextView) findViewById(R.id.textView3);
+        name = (TextView) findViewById(R.id.textView4);
+        type = (TextView) findViewById(R.id.textView5);
+
+        Typeface customFont = Typeface.createFromAsset(getAssets(),"fonts/Sony_Sketch_EF.ttf");
+        header.setTypeface(customFont);
+        name.setTypeface(customFont);
+        type.setTypeface(customFont);
+        header.setTextSize(45);
 
         sendButton.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#3c3c3c">
 
     <TextView
         android:layout_width="wrap_content"
@@ -9,23 +10,26 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:id="@+id/users_textView"
         android:layout_gravity="center_horizontal"
-        android:text="@string/users"/>
+        android:text="@string/users"
+        android:textColor="@android:color/white"/>
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></RelativeLayout>
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/imageView"
-            android:src="@drawable/user_icon_128"
+            android:src="@drawable/user_icon2"
             android:contentDescription="@string/photo"
             android:clickable="false"
             android:baselineAlignBottom="false"
             android:layout_alignTop="@+id/userProfileName"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
+            android:layout_toRightOf="@+id/show_progress"
+            android:layout_toEndOf="@+id/show_progress" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -33,18 +37,21 @@
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="@string/user"
             android:id="@+id/userProfileName"
+            android:layout_marginTop="41dp"
+            android:textColor="@android:color/white"
             android:layout_alignParentTop="true"
-            android:layout_alignLeft="@+id/macroTypeProfile"
-            android:layout_alignStart="@+id/macroTypeProfile"
-            android:layout_marginTop="38dp" />
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/currentUserName"
             android:text="name"
+            android:textColor="@android:color/white"
             android:layout_below="@+id/userProfileName"
-            android:layout_centerHorizontal="true" />
+            android:layout_alignRight="@+id/optionsLabel"
+            android:layout_alignEnd="@+id/optionsLabel" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -52,9 +59,10 @@
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="@string/macrocycle"
             android:id="@+id/macroTypeProfile"
+            android:textColor="@android:color/white"
             android:layout_below="@+id/currentUserName"
-            android:layout_toRightOf="@+id/imageView"
-            android:layout_toEndOf="@+id/imageView" />
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
 
         <Button
             style="?android:attr/buttonStyleSmall"
@@ -73,7 +81,8 @@
             android:text="type"
             android:layout_below="@+id/macroTypeProfile"
             android:layout_alignRight="@+id/currentUserName"
-            android:layout_alignEnd="@+id/currentUserName" />
+            android:layout_alignEnd="@+id/currentUserName"
+            android:textColor="@android:color/white"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -84,7 +93,8 @@
             android:layout_marginTop="41dp"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:layout_below="@+id/imageView" />
+            android:layout_below="@+id/imageView"
+            android:textColor="@android:color/white"/>
 
         <Button
             android:layout_width="wrap_content"

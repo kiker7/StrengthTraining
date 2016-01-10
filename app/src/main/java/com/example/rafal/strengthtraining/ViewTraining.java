@@ -3,6 +3,7 @@ package com.example.rafal.strengthtraining;
 import android.app.ListActivity;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -42,12 +43,18 @@ public class ViewTraining extends ListActivity {
     private String macro;
     private String[] array = getWeekList();
     private int [] positionArray;
+    private TextView header;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
         positionArray = setDoneWeekArray();
+        header = (TextView) findViewById(R.id.selection);
+        Typeface customFont = Typeface.createFromAsset(getAssets(),"fonts/InfantylFat.ttf");
+        header.setTypeface(customFont);
+        header.setTextSize(60);
+
         setListAdapter(new IconicAdapter());
 
         String userName = getUserNameFromPref();
@@ -197,7 +204,8 @@ public class ViewTraining extends ListActivity {
             }
 
             TextView label=(TextView)row.findViewById(R.id.label);
-
+            Typeface customFont = Typeface.createFromAsset(getAssets(),"fonts/InfantylFat.ttf");
+            label.setTypeface(customFont);
             label.setText(array[position]);
 
             ImageView icon=(ImageView)row.findViewById(R.id.icon);

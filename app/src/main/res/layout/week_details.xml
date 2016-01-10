@@ -2,7 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:weightSum="1">
+    android:weightSum="1"
+    android:background="#3c3c3c">
 
 
     <LinearLayout
@@ -10,8 +11,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:background="#d6d6d6"
-        android:weightSum="1">
+        android:background="#3c3c3c"
+        android:weightSum="1"
+        android:layout_marginBottom="15dp">
 
         <TextView
             android:layout_width="wrap_content"
@@ -19,40 +21,50 @@
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:id="@+id/textView2"
             android:text="@string/start"
-            android:layout_weight="0.25" />
+            android:background="#3c3c3c"
+            android:textColor="#ffffff" />
 
         <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/imageButton"
             android:contentDescription="@string/help"
-            android:src="@drawable/question_mark_48"
-            android:layout_marginLeft="50dp"/>
+            android:src="@drawable/question_mark2_48"
+            android:layout_marginLeft="30dp"/>
     </LinearLayout>
 
     <ExpandableListView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/expandableListViewWeek" />
+        android:id="@+id/expandableListViewWeek"
+        android:groupIndicator="@drawable/group_inicator_selector"/>
 
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="@string/footer"
-            android:id="@+id/footer" />
+            android:id="@+id/footer"
+            android:textColor="#ffffff"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="4dp"/>
 
         <Button
             style="?android:attr/buttonStyleSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/footerbutton"
-            android:text="@string/done"/>
+            android:text="@string/done"
+            android:background="#9ac0b7"
+            android:textColor="@android:color/black"
+            android:padding="2dp"
+            android:layout_marginLeft="10dp" />
 
     </LinearLayout>
 

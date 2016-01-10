@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#419c40">
+    android:background="#3c3c3c">
 
     <TextView
         android:layout_width="wrap_content"
@@ -12,20 +12,23 @@
         android:id="@+id/textView3"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="30dp"
-        android:layout_marginBottom="30dp" />
+        android:layout_marginBottom="30dp"
+        android:textColor="@android:color/white"/>
 
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal">
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="4dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="@string/imie"
-            android:id="@+id/textView4" />
+            android:id="@+id/textView4"
+            android:textColor="@android:color/white"/>
 
         <EditText
             android:layout_width="wrap_content"
@@ -33,7 +36,8 @@
             android:inputType="textPersonName"
             android:ems="10"
             android:id="@+id/profil_form_name_field"
-            android:layout_marginLeft="70dp" />
+            android:layout_marginLeft="70dp"
+            android:textColor="@android:color/white"/>
     </LinearLayout>
 
     <LinearLayout
@@ -48,37 +52,43 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="@string/typTreningu"
-            android:id="@+id/textView5" />
+            android:id="@+id/textView5"
+            android:textColor="@android:color/white"/>
 
         <RadioGroup
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:id="@+id/radioGroupProfil">
+            android:orientation="vertical"
+            android:id="@+id/radioGroupProfil"
+            android:layout_marginLeft="60dp">
 
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/objetosc"
                 android:id="@+id/volume"
-                android:checked="false" />
+                android:checked="false"
+                android:textColor="@android:color/white"/>
 
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/intensywny"
-                android:id="@+id/intensive" />
+                android:id="@+id/intensive"
+                android:textColor="@android:color/white"/>
 
         </RadioGroup>
 
     </LinearLayout>
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:text="Gotowe"
         android:id="@+id/send_button"
-        android:layout_gravity="center_horizontal" />
+        android:layout_gravity="center_horizontal"
+        android:background="#ffffff"
+        android:layout_marginTop="100dp" />
 
 
 

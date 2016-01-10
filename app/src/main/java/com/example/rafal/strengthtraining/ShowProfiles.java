@@ -1,8 +1,10 @@
 package com.example.rafal.strengthtraining;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -18,6 +20,7 @@ import com.j256.ormlite.dao.Dao;
 import com.j256.ormlite.stmt.PreparedQuery;
 import com.j256.ormlite.stmt.QueryBuilder;
 
+import java.io.File;
 import java.sql.SQLException;
 import java.util.List;
 
@@ -30,7 +33,7 @@ public class ShowProfiles extends Activity {
     private DatabaseHelper databaseHelper = null;
     private User user;
     private Dao<User, Integer> userDao;
-    private TextView currentName, macroType;
+    private TextView currentName, macroType,header;
     private Button progressBtn, deleteBtn, changeMacroBtn;
     private int macroTypeFromUser;
 
@@ -38,6 +41,11 @@ public class ShowProfiles extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.show_profiles);
+        header = (TextView) findViewById(R.id.users_textView);
+        Typeface customFont = Typeface.createFromAsset(getAssets(),"fonts/KeiserSousa.ttf");
+        header.setTypeface(customFont);
+        header.setTextSize(60);
+
         try {
             userDao = getHelper().getUserDao();
         } catch (SQLException e) {
@@ -84,15 +92,17 @@ public class ShowProfiles extends Activity {
             public void onClick(View v) {
                 try {
                     if(user != null){
+                        String name = user.getUserName();
                         userDao.delete(user);
                         SharedPreferences.Editor editor = userPrefs.edit();
-                        SharedPreferences preferences2 = getApplicationContext().getSharedPreferences("Progress", MODE_PRIVATE);
+                        SharedPreferences preferences2 = getApplicationContext().getSharedPreferences(name, MODE_PRIVATE);
                         SharedPreferences.Editor editor2 = preferences2.edit();
                         editor2.clear();
                         editor2.apply();
                         editor.remove("logIn");
                         editor.remove("userName");
                         editor.apply();
+//                        clearSharedPreferences(getApplicationContext());
                         Toast.makeText(getApplicationContext(),"Usunięto",Toast.LENGTH_SHORT).show();
                     }else{
                         Toast.makeText(getApplicationContext(),"Nie posiadasz konta",Toast.LENGTH_SHORT).show();
@@ -130,6 +140,21 @@ public class ShowProfiles extends Activity {
             }
         });
 
+    }
+
+    private void clearSharedPreferences(Context ctx){
+        File dir = new File(ctx.getFilesDir().getParent() + "/shared_prefs/");
+        String[] children = dir.list();
+        for (int i = 0; i < children.length; i++) {
+            // czysci wszystkie pliki
+            ctx.getSharedPreferences(children[i].replace(".xml", ""), Context.MODE_PRIVATE).edit().clear().commit();
+        }
+        // zostawia wiecej czasu na usuwanie
+        try { Thread.sleep(1000); } catch (InterruptedException e) {}
+        for (int i = 0; i < children.length; i++) {
+            // usuwa pliki
+            new File(dir, children[i]).delete();
+        }
     }
 
     private User getByUserName(String userName){

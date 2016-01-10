@@ -1,6 +1,7 @@
 package com.example.rafal.strengthtraining;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.graphics.Typeface;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -77,6 +78,7 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
         TextView labelListHeader = (TextView) convertView.findViewById(R.id.list_group_header);
         labelListHeader.setTypeface(null, Typeface.BOLD);
         labelListHeader.setText(headerTitle);
+        labelListHeader.setTextColor(Color.WHITE);
 
         return convertView;
     }
@@ -93,6 +95,8 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
 
         TextView txtListChild = (TextView) convertView.findViewById(R.id.list_item);
         txtListChild.setText(childText);
+        txtListChild.setTextColor(Color.WHITE);
+
 
         return convertView;
     }

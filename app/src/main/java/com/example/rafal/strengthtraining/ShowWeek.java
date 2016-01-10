@@ -5,12 +5,14 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ExpandableListView;
 import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.rafal.strengthtraining.data.DatabaseHelper;
@@ -41,6 +43,7 @@ public class ShowWeek extends Activity {
     // nr tygodnia
     private String week;
     private Set<String> weekSet;
+    private TextView header;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +52,10 @@ public class ShowWeek extends Activity {
         weekSet = new HashSet<String>(Arrays.asList("1","3","5","7"));
         Button footerBtn = (Button) findViewById(R.id.footerbutton);
         questionMarkImg = (ImageButton) findViewById(R.id.imageButton);
+        header = (TextView) findViewById(R.id.textView2);
+        Typeface customFont = Typeface.createFromAsset(getAssets(),"fonts/guanine_.ttf");
+        header.setTypeface(customFont);
+        header.setTextSize(50);
 
         list = getIntent().getExtras().getStringArrayList("list");
         week = list.remove(list.size() -1);
